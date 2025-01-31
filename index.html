@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .facts-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Space Facts</h1>
+        <button id="show-facts">Show Space Facts</button>
+        <div id="facts-container" class="facts-container"></div>
+    </div>
+    <script>
+        const spaceFacts = [
+            {
+                fact: "Vastness of Space",
+                description: "Space is incredibly vast. The observable universe is about 93 billion light-years in diameter."
+            },
+            {
+                fact: "Black Holes",
+                description: "Black holes are regions in space where the gravitational pull is so strong that nothing, not even light, can escape from them."
+            },
+            {
+                fact: "The Speed of Light",
+                description: "Light travels at a speed of about 299,792 kilometers per second (186,282 miles per second). This means that light from the Sun takes about 8 minutes and 20 seconds to reach Earth."
+            },
+            {
+                fact: "Galaxies",
+                description: "There are an estimated 2 trillion galaxies in the observable universe, each containing millions or even billions of stars."
+            },
+            {
+                fact: "The Coldest Place",
+                description: "The coldest known place in the universe is the Boomerang Nebula, where temperatures drop to about -272 degrees Celsius (-458 degrees Fahrenheit)."
+            },
+            {
+                fact: "Expanding Universe",
+                description: "The universe is expanding, and this expansion is accelerating due to a mysterious force known as dark energy."
+            },
+            {
+                fact: "Neutron Stars",
+                description: "Neutron stars are incredibly dense remnants of supernova explosions. A sugar-cube-sized amount of neutron-star material would weigh about as much as all of humanity."
+            },
+            {
+                fact: "Water in Space",
+                description: "Water has been found in various forms throughout the universe, including ice on moons and planets, and even in the form of vapor in the atmospheres of exoplanets."
+            },
+            {
+                fact: "Time Dilation",
+                description: "According to Einstein's theory of relativity, time moves slower in stronger gravitational fields. This means that time passes differently for astronauts in space compared to people on Earth."
+            },
+            {
+                fact: "The Great Attractor",
+                description: "The Great Attractor is a gravitational anomaly in intergalactic space that is pulling our galaxy, the Milky Way, and many others towards it at a speed of about 600 kilometers per second (373 miles per second)."
+            }
+        ];
+
+        document.getElementById('show-facts').addEventListener('click', () => {
+            const factsContainer = document.getElementById('facts-container');
+            factsContainer.innerHTML = ''; // Clear previous facts
+            spaceFacts.forEach(fact => {
+                const factElement = document.createElement('div');
+                factElement.classList.add('fact');
+                factElement.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+                factsContainer.appendChild(factElement);
+            });
+        });
+    </script>
+</body>
+</html>
